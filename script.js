@@ -31,7 +31,7 @@ async function checkWallet() {
   try {
     const res = await fetch(`/api/check.js?wallet=${wallet}`);
     const data = await res.json();
-    const exploredContracts = data.dapps || [];
+    const exploredContracts = data.explored || [];
 
     document.querySelectorAll('.dapp-card').forEach(card => {
       const contracts = card.dataset.contracts.split(',');
